@@ -28,10 +28,10 @@ module.exports = (app) => {
     app.get('/txnTracker/blacklist',txnBlacklister.fetchAllBlacklisted);
 
 
-    // Retrieve all policypal transactions
-    app.get('/txnTracker/fetchAllPALTxns', txnLog.fetchAllPALTxns);
+    // Retrieve all token transactions
+    app.get('/txnTracker/fetchAllTokenTxns', txnLog.fetchAllTokenTxns);
 
     // Retrieve a single transaction with hash
-    app.get('/txnTracker/fetchOnePALTxn/:transactionId', txnLog.fetchOnePALTxn);
+    app.get('/txnTracker/fetchOneTokenTxn/:transactionId', txnLog.fetchOneTokenTxn);
 
 }

@@ -55,7 +55,7 @@ web3.extend({
   }]
 });
 
-//normal check to load and print balance of PAL token in mainnet
+//normal check to load and print balance of token in mainnet
 var balance = web3.eth.getBalance(process.env.account, function (error, result) {
     if (!error) {
   console.log('Contract Value during startup ...'+web3.utils.fromWei(result, 'ether'));
@@ -64,13 +64,13 @@ var balance = web3.eth.getBalance(process.env.account, function (error, result) 
     }
   });
 
-//load ABI of PAL
-var abiArray = JSON.parse(fs.readFileSync('./app/contracts/PAL-ABI.json', 'utf8'));
+//load ABI of token
+var abiArray = JSON.parse(fs.readFileSync('./app/contracts/TOKEN-ABI.json', 'utf8'));
 
-//load PAL contract address from environment file
+//load token contract address from environment file
 let contract_address = process.env.account;    //contract address
 
-//load Contract instance using the ABI Array of PAL token and contractAddress from mainnet
+//load Contract instance using the ABI Array of token and contractAddress from mainnet
 var contract = new web3.eth.Contract(abiArray, contract_address);
 
 
@@ -105,7 +105,7 @@ cronJob.start();
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to Transaction explorer application. View/Bookmark/Blacklist transactions for Policypal PAL token. Organize and keep track of all your transactions."});
+    res.json({"message": "Welcome to Transaction explorer application. View/Bookmark/Blacklist transactions for token. Organize and keep track of all your transactions."});
 });
 
 

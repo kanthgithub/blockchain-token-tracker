@@ -1,8 +1,8 @@
 const txnLogModel = require('../models/txn-log.model.js');
 
 
-// Retrieve all policypal transactions
-exports.fetchAllPALTxns = (req, res) => {
+// Retrieve all token transactions
+exports.fetchAllTokenTxns = (req, res) => {
        
         txnLogModel.getTransactionLogsOrderedByBlockIndex(
         function(error, txns){
@@ -18,7 +18,7 @@ exports.fetchAllPALTxns = (req, res) => {
 };
 
 // Retrieve a single transaction with hash
-exports.fetchOnePALTxn = (req, res) => {
+exports.fetchOneTokenTxn = (req, res) => {
 
     txnLogModel.getTransactionLogByTransactionHash(req.params.transactionHash,
             function(error, txn){
